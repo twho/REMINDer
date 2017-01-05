@@ -1,0 +1,47 @@
+PODS:
+  - AsyncDisplayKit (1.9.92):
+    - AsyncDisplayKit/PINRemoteImage (= 1.9.92)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.92)
+  - AsyncDisplayKit/Core (1.9.92):
+    - AsyncDisplayKit/ASDealloc2MainObject
+  - AsyncDisplayKit/PINRemoteImage (1.9.92):
+    - AsyncDisplayKit/Core
+    - PINCache (= 3.0.1-beta)
+    - PINRemoteImage/iOS (= 3.0.0-beta.3)
+  - DropDown (2)
+  - FLAnimatedImage (1.0.12)
+  - NMessenger (1.0.79):
+    - AsyncDisplayKit (= 1.9.92)
+  - PINCache (3.0.1-beta)
+  - PINRemoteImage (3.0.0-beta.3):
+    - PINRemoteImage/FLAnimatedImage (= 3.0.0-beta.3)
+  - PINRemoteImage/Core (3.0.0-beta.3):
+    - PINCache (>= 3.0.0-beta)
+  - PINRemoteImage/FLAnimatedImage (3.0.0-beta.3):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+  - PINRemoteImage/iOS (3.0.0-beta.3):
+    - PINRemoteImage/Core
+  - PubNub (4.5.9):
+    - PubNub/Core (= 4.5.9)
+  - PubNub/Core (4.5.9)
+
+DEPENDENCIES:
+  - AsyncDisplayKit
+  - DropDown
+  - NMessenger
+  - PINRemoteImage
+  - PubNub
+
+SPEC CHECKSUMS:
+  AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  NMessenger: 79b8a4d2132fe49e03ec8964d07955d6553f831c
+  PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
+  PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
+  PubNub: fbcd3f98bced45b7d61de79cf3cd6822ee8c1858
+
+PODFILE CHECKSUM: 8a797c06e46dbbbf5ba5132b7fde7c3b4e0d6d70
+
+COCOAPODS: 1.1.1
