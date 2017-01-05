@@ -5,7 +5,7 @@ int cx, cy;
 float clockDiameter;
 
 // Timer time unit: minute
-float setTimerTime = (15) * 60.0 * 60.0;
+float setTimerTime = (60) * 60.0 * 60.0;
 float currentTimerTime = 0.0;
 
 //Buttons
@@ -37,29 +37,18 @@ int mode = 0;
 void setup() {
   size(640, 640);
   stroke(255);
-
-  font = createFont("futura/Futura-Light.otf", 80);
-  //Load all images
-  pauseButton = loadImage("CircledPause.png");
-  pauseButtonHover = loadImage("CircledPauseHover.png");
-  playButton = loadImage("CircledPlay.png");
-  playButtonHover = loadImage("CircledPlayHover.png");
-  extendButton = loadImage("Extend.png");
-  extendButtonHover = loadImage("ExtendHover.png");
-  okayButton = loadImage("Ok.png");
-  okayButtonHover = loadImage("OkHover.png");
-  upperQuote = loadImage("QuoteUpper.png");
-  lowerQuote = loadImage("QuoteLower.png");
-  userImage = loadImage("sampleUser.png");
-  //Load watch base
-  watchBase = loadImage("watchbase.png");
-  image(watchBase, cx, cy, width, height); 
   
+  // Load font
+  font = createFont("futura/Futura-Light.otf", 80);
+  // Load all images
+  loadAllImages(); 
+  
+  // set clock size
   int radius = min(width, height) / 3;
   clockDiameter = radius * 1.6;
-
   cx = width / 2;
-  cy = height / 2 + 3;
+  cy = height / 2 + 3; // The gap size: 3
+  
   // Digital clock
   digitalClock = new DigitalClock(100, width/2, height/2);
   currentTimerTime = setTimerTime;
@@ -68,6 +57,8 @@ void setup() {
 void draw() {
   // Draw the clock background
   fill(52);
+  
+  //Set the mode of the watch
   switch(mode) {
     case 0:
       drawDigitalClock();
@@ -80,21 +71,45 @@ void draw() {
       break;
   }
   if(timerRunning){
-    currentTimerTime --;
+    currentTimerTime -= 50;
   }
 }
 
+void loadAllImages(){
+  //Load all images
+  pauseButton = loadImage("CircledPause.png");
+  pauseButtonHover = loadImage("CircledPauseHover.png");
+  playButton = loadImage("CircledPlay.png");
+  playButtonHover = loadImage("CircledPlayHover.png");
+  extendButton = loadImage("Extend.png");
+  extendButtonHover = loadImage("ExtendHover.png");
+  okayButton = loadImage("Ok.png");
+  okayButtonHover = loadImage("OkHover.png");
+  upperQuote = loadImage("QuoteUpper.png");
+  lowerQuote = loadImage("QuoteLower.png");
+  userImage = loadImage("sampleUser.png");
+  
+  //Load watch base
+  watchBase = loadImage("watchbase.png");
+  image(watchBase, cx, cy, width, height);
+}
+
 void drawDigitalClock() {
+  //Draw timer background
   stroke(52);
   ellipse(cx, cy, clockDiameter + 2, clockDiameter + 2);
   strokeWeight(10);
+  
+  //Set timer background color
   if (currentTimerTime * (2 * PI / setTimerTime) < PI / 2.0) {
     stroke(234, 102, 53);
   } else {
     stroke(53, 218, 234);
   }
+  
   // Draw the timer ellipse
   arc(cx, cy, clockDiameter, clockDiameter, -PI / 2.0, -PI / 2.0 + currentTimerTime * ( 2 * PI / setTimerTime));
+  
   // Draw the digital clock
   digitalClock.getTime();
   digitalClock.display();
@@ -163,9 +178,11 @@ void receiveMessage(int _fontSize) {
   } else {
     stroke(53, 218, 234);
   }
+  
   // Draw the timer ellipse
   arc(cx, cy, clockDiameter, clockDiameter, -PI / 2.0, -PI / 2.0 + currentTimerTime * ( 2 * PI / setTimerTime));
   
+  //put images
   image(userImage, cx - width / 10, cy - height / 5 - 16, width / 5, height / 5); 
   image(upperQuote, cx - width / 18 - width / 5.5, cy - height / 16 + 16, width/18, height/18);
   image(lowerQuote, cx - width / 18 + width / 4.7, cy + height / 16 + 16, width/18, height/18);
