@@ -1,4 +1,20 @@
 ## REMINDer
+Target users
+- ADHD, tech-savvy (familiar with technology)
+- Non-regular schedule
+- They have a goal that they want to achieve, but they don’t know how to do so.
 
-### Wireframes
+Target devices
+- Smartphone
+- Smartwatch
+
+Prototype Tools
+- iOS Swift - mobile app
+- Processing - smartwatch user interface
+
+## Wireframes
 <a href="http://imgur.com/hz8krdi"><img src="http://i.imgur.com/hz8krdi.png" title="source: imgur.com" /></a>
+
+## Watch Interface
+### Standard Mode
+<a href="http://imgur.com/vEZtZgK"><img src="http://i.imgur.com/vEZtZgK.png" title="source: imgur.com" width="300" /></a>
