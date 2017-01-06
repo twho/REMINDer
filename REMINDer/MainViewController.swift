@@ -11,7 +11,7 @@ import NMessenger
 import AsyncDisplayKit
 import PubNub
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,11 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func btnStartPressed(_ sender: UIButton) {
+        let exampleViewController = MessengerViewController()
+        navigationController?.pushViewController(exampleViewController, animated: true)
     }
 }
 

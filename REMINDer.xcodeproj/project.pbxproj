@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2724C26F1E08F9B000175C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724C26E1E08F9B000175C7D /* AppDelegate.swift */; };
-		2724C2711E08F9B000175C7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724C2701E08F9B000175C7D /* ViewController.swift */; };
+		2724C2711E08F9B000175C7D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724C2701E08F9B000175C7D /* MainViewController.swift */; };
 		2724C2741E08F9B000175C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2721E08F9B000175C7D /* Main.storyboard */; };
 		2724C2761E08F9B000175C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2751E08F9B000175C7D /* Assets.xcassets */; };
 		2724C2791E08F9B000175C7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2771E08F9B000175C7D /* LaunchScreen.storyboard */; };
+		277CB6761E1EF20400D9B72B /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CB6751E1EF20400D9B72B /* MessengerViewController.swift */; };
 		27918EDD1E1E877B004CF82C /* HideKeyboardByTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */; };
 		27918EE41E1E8838004CF82C /* DropDownListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918EE21E1E8838004CF82C /* DropDownListCell.swift */; };
 		27918EE51E1E8838004CF82C /* DropDownListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27918EE31E1E8838004CF82C /* DropDownListCell.xib */; };
+		27A60D8C1E1F62A2006A5BEC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */; };
+		27A60D8E1E1F6941006A5BEC /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */; };
+		27A60D901E1F69BC006A5BEC /* UIColorByHexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */; };
 		4E7049C42537FDFC5CAC4307 /* Pods_REMINDerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C77C67F08DD337FE5F54CF /* Pods_REMINDerUITests.framework */; };
 		5B14EFC94136F8310BCD17C4 /* Pods_REMINDerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E72E444A9C181F09C99B82 /* Pods_REMINDerTests.framework */; };
 		9DFD523EB8B281D0FED300BC /* Pods_REMINDer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19E4A3295B3B27E0D57E0B3 /* Pods_REMINDer.framework */; };
@@ -40,16 +44,20 @@
 /* Begin PBXFileReference section */
 		2724C26B1E08F9B000175C7D /* REMINDer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REMINDer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2724C26E1E08F9B000175C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2724C2701E08F9B000175C7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2724C2701E08F9B000175C7D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2724C2731E08F9B000175C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2724C2751E08F9B000175C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2724C2781E08F9B000175C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2724C27A1E08F9B000175C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2724C27F1E08F9B000175C7D /* REMINDerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REMINDerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2724C28A1E08F9B000175C7D /* REMINDerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REMINDerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277CB6751E1EF20400D9B72B /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardByTapViewController.swift; sourceTree = "<group>"; };
 		27918EE21E1E8838004CF82C /* DropDownListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownListCell.swift; sourceTree = "<group>"; };
 		27918EE31E1E8838004CF82C /* DropDownListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownListCell.xib; sourceTree = "<group>"; };
+		27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
+		27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorByHexRGB.swift; sourceTree = "<group>"; };
 		32CF5CA02F790105CC3C9053 /* Pods-REMINDerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REMINDerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-REMINDerUITests/Pods-REMINDerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		39E72E444A9C181F09C99B82 /* Pods_REMINDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_REMINDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		665255BEE6FE5B7556FBD7E8 /* Pods-REMINDerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REMINDerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-REMINDerTests/Pods-REMINDerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +147,6 @@
 				27918EDE1E1E879C004CF82C /* Views */,
 				27918EDB1E1E875E004CF82C /* Extensions */,
 				2724C26E1E08F9B000175C7D /* AppDelegate.swift */,
-				2724C2701E08F9B000175C7D /* ViewController.swift */,
 				2724C2721E08F9B000175C7D /* Main.storyboard */,
 				2724C2751E08F9B000175C7D /* Assets.xcassets */,
 				2724C2771E08F9B000175C7D /* LaunchScreen.storyboard */,
@@ -152,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */,
+				27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */,
+				27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +168,8 @@
 		27918EDE1E1E879C004CF82C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2724C2701E08F9B000175C7D /* MainViewController.swift */,
+				27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 			children = (
 				27918EE21E1E8838004CF82C /* DropDownListCell.swift */,
 				27918EE31E1E8838004CF82C /* DropDownListCell.xib */,
+				277CB6751E1EF20400D9B72B /* MessengerViewController.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -457,10 +469,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A60D901E1F69BC006A5BEC /* UIColorByHexRGB.swift in Sources */,
 				27918EE41E1E8838004CF82C /* DropDownListCell.swift in Sources */,
-				2724C2711E08F9B000175C7D /* ViewController.swift in Sources */,
+				2724C2711E08F9B000175C7D /* MainViewController.swift in Sources */,
 				2724C26F1E08F9B000175C7D /* AppDelegate.swift in Sources */,
 				27918EDD1E1E877B004CF82C /* HideKeyboardByTapViewController.swift in Sources */,
+				277CB6761E1EF20400D9B72B /* MessengerViewController.swift in Sources */,
+				27A60D8E1E1F6941006A5BEC /* CornerRadiusView.swift in Sources */,
+				27A60D8C1E1F62A2006A5BEC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +632,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reminder.com.REMINDer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -630,6 +647,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reminder.com.REMINDer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
