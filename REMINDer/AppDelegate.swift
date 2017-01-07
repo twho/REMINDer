@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     override init() {
         super.init()
         self.client.addListener(self)
-        self.client.subscribeToChannels(["HyCubeTask"], withPresence: false)
-        self.client.subscribeToChannels(["HyCubeChat"], withPresence: false)
+//        self.client.subscribeToChannels(["HyCubeTask"], withPresence: false)
     }
     
     @nonobjc func client(client: PubNub, didReceiveStatus status: PNStatus) {
