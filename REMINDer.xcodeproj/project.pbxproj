@@ -10,8 +10,9 @@
 		2724C26F1E08F9B000175C7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724C26E1E08F9B000175C7D /* AppDelegate.swift */; };
 		2724C2711E08F9B000175C7D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724C2701E08F9B000175C7D /* MainViewController.swift */; };
 		2724C2741E08F9B000175C7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2721E08F9B000175C7D /* Main.storyboard */; };
-		2724C2761E08F9B000175C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2751E08F9B000175C7D /* Assets.xcassets */; };
 		2724C2791E08F9B000175C7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2724C2771E08F9B000175C7D /* LaunchScreen.storyboard */; };
+		275277CB1E21BD3C005014BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275277CA1E21BD3C005014BE /* Assets.xcassets */; };
+		275277CD1E21C26E005014BE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275277CC1E21C26E005014BE /* HistoryViewController.swift */; };
 		27918EDD1E1E877B004CF82C /* HideKeyboardByTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */; };
 		27918EE41E1E8838004CF82C /* DropDownListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918EE21E1E8838004CF82C /* DropDownListCell.swift */; };
 		27918EE51E1E8838004CF82C /* DropDownListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27918EE31E1E8838004CF82C /* DropDownListCell.xib */; };
@@ -46,11 +47,12 @@
 		2724C26E1E08F9B000175C7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2724C2701E08F9B000175C7D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2724C2731E08F9B000175C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2724C2751E08F9B000175C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2724C2781E08F9B000175C7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2724C27A1E08F9B000175C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2724C27F1E08F9B000175C7D /* REMINDerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REMINDerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2724C28A1E08F9B000175C7D /* REMINDerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REMINDerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		275277CA1E21BD3C005014BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		275277CC1E21C26E005014BE /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardByTapViewController.swift; sourceTree = "<group>"; };
 		27918EE21E1E8838004CF82C /* DropDownListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownListCell.swift; sourceTree = "<group>"; };
 		27918EE31E1E8838004CF82C /* DropDownListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownListCell.xib; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 				27918EDB1E1E875E004CF82C /* Extensions */,
 				2724C26E1E08F9B000175C7D /* AppDelegate.swift */,
 				2724C2721E08F9B000175C7D /* Main.storyboard */,
-				2724C2751E08F9B000175C7D /* Assets.xcassets */,
+				275277CA1E21BD3C005014BE /* Assets.xcassets */,
 				2724C2771E08F9B000175C7D /* LaunchScreen.storyboard */,
 				2724C27A1E08F9B000175C7D /* Info.plist */,
 			);
@@ -171,6 +173,7 @@
 				2724C2701E08F9B000175C7D /* MainViewController.swift */,
 				27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */,
 				27FA01BE1E20B83500458B51 /* CharacterViewController.swift */,
+				275277CC1E21C26E005014BE /* HistoryViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -304,8 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2724C2791E08F9B000175C7D /* LaunchScreen.storyboard in Resources */,
-				2724C2761E08F9B000175C7D /* Assets.xcassets in Resources */,
 				27918EE51E1E8838004CF82C /* DropDownListCell.xib in Resources */,
+				275277CB1E21BD3C005014BE /* Assets.xcassets in Resources */,
 				2724C2741E08F9B000175C7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +478,7 @@
 				2724C26F1E08F9B000175C7D /* AppDelegate.swift in Sources */,
 				27FA01BF1E20B83500458B51 /* CharacterViewController.swift in Sources */,
 				27918EDD1E1E877B004CF82C /* HideKeyboardByTapViewController.swift in Sources */,
+				275277CD1E21C26E005014BE /* HistoryViewController.swift in Sources */,
 				27A60D8E1E1F6941006A5BEC /* CornerRadiusView.swift in Sources */,
 				27A60D8C1E1F62A2006A5BEC /* SettingsViewController.swift in Sources */,
 			);

@@ -47,10 +47,12 @@ class CharacterViewController: UIViewController {
         switch sender.selectedSegmentIndex {
             case 0:
                 self.gender = true
+                break
             case 1:
                 self.gender = false
+                break
             default:
-                break;
+                break
         }
         updateCharacter()
     }
@@ -59,10 +61,12 @@ class CharacterViewController: UIViewController {
         switch sender.selectedSegmentIndex {
             case 0:
                 self.character = true
+                break
             case 1:
                 self.character = false
+                break
             default:
-                break;
+                break
         }
         updateCharacter()
     }

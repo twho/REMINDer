@@ -13,9 +13,8 @@ import PubNub
 
 struct MessageItem {
     var uuid: String
-    var sender: String
-    var messageContent: String
-    var isIncoming: Bool
+    var sender = "sender"
+    var messageContent = "messageContent"
 }
 
 class MainViewController: NMessengerViewController, PNObjectEventListener {
@@ -24,10 +23,11 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     @IBOutlet weak var inputAreaBackground: UIView!
     @IBOutlet weak var edInput: UITextField!
     @IBOutlet weak var btnSend: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var mainChannelName: String = "REMINDerChat"
+    var mainChannelName: String = "REMINDerChat2"
     var allMessageItems: [MessageItem] = []
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: 50, height: 50)) as UIActivityIndicatorView
+    let myName = "MikeYo"
     let serialQueue: DispatchQueue = DispatchQueue(label: "pageHistoryQueue", attributes: [])
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let defaults = UserDefaults.standard
@@ -35,7 +35,6 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showActivityIndicator()
         appDelegate.client.addListener(self)
         appDelegate.client.subscribeToChannels([mainChannelName], withPresence: false)
         
@@ -74,13 +73,13 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     
     @IBAction func btnSendPressed(_ sender: UIButton) {
         if ("\(edInput.text!)".characters.count > 0) {
-            self.postText(sendText(edInput.text!, isIncomingMessage: false) as! MessageNode, userName: "Me", isIncomingMessage: false)
+            self.postText(sendText(edInput.text!, isIncomingMessage: false) as! MessageNode, userName: myName, isIncomingMessage: false)
             edInput.text = ""
         }
     }
     
     override func sendText(_ text: String, isIncomingMessage: Bool) -> GeneralMessengerCell {
-        let sendText = "REMINDerISAWESOME\(text)"
+        let sendText : [String : AnyObject] = ["uuid" : UUID().uuidString as AnyObject, "sender" : myName as AnyObject, "messageContent" : text as AnyObject]
         appDelegate.client.publish(sendText, toChannel: mainChannelName, compressed: false, withCompletion: { (status) in
             if !status.isError {
                 
@@ -120,9 +119,13 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     
     private func createAvatar(userName: String)->ASImageNode {
         let avatar = ASImageNode()
-//        if(nil != defaults.data(forKey: userName)){
-//            avatar.image = UIImage(data: defaults.data(forKey: userName)! as Data)
-//        }
+        var gender = defaults.bool(forKey: "setGender")
+        let character = defaults.bool(forKey: "setCharacter")
+        if character {
+            avatar.image = UIImage(named: "sample_angel")
+        } else {
+            avatar.image = UIImage(named: "sample_devil")
+        }
         avatar.backgroundColor = UIColor.lightGray
         avatar.preferredFrameSize = CGSize(width: 45, height: 45)
         avatar.layer.cornerRadius = 22.5
@@ -139,15 +142,14 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
         }
         
         if(mainChannelName == "\(message.data.channel)"){
-            let messageArr = "\(message.data.message as! String)".components(separatedBy: "REMINDerISAWESOME")
-            if(messageArr[0] != "Me"){
-                let textContent = TextContentNode(textMessageString: messageArr[1], currentViewController: self, bubbleConfiguration: self.sharedBubbleConfiguration)
-                let newMessage = MessageNode(content: textContent)
-                newMessage.cellPadding = messagePadding
-                newMessage.currentViewController = self
-                let senderName = messageArr[0]
-                self.postText(newMessage, userName: senderName, isIncomingMessage: true)
+            print("\((message.data.message as! [String:AnyObject]))")
+            let receivedMessage = message.data.message as! [String:AnyObject]
+            let messageContent = receivedMessage["messageContent"] as! String
+            let sender = receivedMessage["sender"] as! String
+            if sender != myName {
+                self.postText(getMessageNode(text: messageContent), userName: sender, isIncomingMessage: true)
             }
+            
         }
     }
     
@@ -166,7 +168,11 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
         self.appDelegate.client.historyForChannel(channelName, start: nil, end: nil, limit: 100, reverse: true, includeTimeToken: true, withCompletion: { (result, status) in
             for message in (result?.data.messages)! {
                 if let resultMessage = (message as! [String:AnyObject])["message"] {
-                    self.postText(self.getMessageNode(text: resultMessage["messageContent"] as! String), userName: resultMessage["sender"] as! String, isIncomingMessage: resultMessage["isIncoming"] as! Bool)
+                    var isIncoming = true
+                    if resultMessage["sender"] as! String == self.myName {
+                        isIncoming = false
+                    }
+                    self.postText(self.getMessageNode(text: resultMessage["messageContent"] as! String), userName: resultMessage["sender"] as! String, isIncomingMessage: isIncoming)
                 }
             }
             
@@ -186,7 +192,11 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
             self.appDelegate.client.historyForChannel(channelName, start: startTimeToken, end: nil, limit: 100, reverse: true, includeTimeToken: true, withCompletion: { (result, status) in
                 for message in (result?.data.messages)! {
                     if let resultMessage = (message as! [String:AnyObject])["message"] {
-                        self.postText(self.getMessageNode(text: resultMessage["messageContent"] as! String), userName: resultMessage["sender"] as! String, isIncomingMessage: resultMessage["isIncoming"] as! Bool)
+                        var isIncoming = true
+                        if resultMessage["sender"] as! String == self.myName {
+                            isIncoming = false
+                        }
+                        self.postText(self.getMessageNode(text: resultMessage["messageContent"] as! String), userName: resultMessage["sender"] as! String, isIncomingMessage: isIncoming)
                     }
                 }
                 
@@ -213,10 +223,7 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     }
     
     func showActivityIndicator() {
-        activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
     
