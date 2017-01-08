@@ -27,7 +27,7 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     
     var mainChannelName: String = "REMINDerChat2"
     var allMessageItems: [MessageItem] = []
-    let myName = "MikeYo"
+    let myName = "Janet"
     let serialQueue: DispatchQueue = DispatchQueue(label: "pageHistoryQueue", attributes: [])
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let defaults = UserDefaults.standard

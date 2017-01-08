@@ -5,7 +5,7 @@ int cx, cy;
 float clockDiameter;
 
 // Timer time unit: minute
-float setTimerTime = (60) * 60.0 * 60.0;
+float setTimerTime = (1) * 60.0 * 60.0 * 60;
 float currentTimerTime = 0.0;
 
 //Buttons
@@ -77,8 +77,8 @@ void draw() {
 
 void loadAllImages(){
   //Load all images
-  pauseButton = loadImage("CircledPause.png");
-  pauseButtonHover = loadImage("CircledPauseHover.png");
+  pauseButton = loadImage("Complete.png");
+  pauseButtonHover = loadImage("OkHover.png");
   playButton = loadImage("CircledPlay.png");
   playButtonHover = loadImage("CircledPlayHover.png");
   extendButton = loadImage("Extend.png");
@@ -189,13 +189,14 @@ void receiveMessage(int _fontSize) {
   textAlign(CENTER);
   textFont(font, _fontSize / 1.5);
   fill(255, 255, 255);
-  text("Hey Gale! Don't forget to \n hand in your report at 9AM \n on Monday!", cx, cy + 16);
+  text("Hey Alice! Don't forget to \n hand in your report at 9AM \n on Monday!", cx, cy + 16);
 }
 
 void mousePressed() {
   if (overPause) {
     if(timerRunning) {
-      timerRunning = false;
+      //timerRunning = false;
+      currentTimerTime = 0;
     } else {
       timerRunning = true;
     }
