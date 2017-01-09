@@ -13,7 +13,7 @@ Prototype Tools
 - Processing - smartwatch user interface
 
 ## Wireframes
-<a href="http://imgur.com/zU3fAon"><img src="http://i.imgur.com/zU3fAon.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/fsjA8sU"><img src="http://i.imgur.com/fsjA8sU.png" title="source: imgur.com" /></a>
 
 ## Watch Interface
 ### Standard Mode
