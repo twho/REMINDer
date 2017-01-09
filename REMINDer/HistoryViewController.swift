@@ -83,7 +83,7 @@ class HistoryViewController: UIViewController {
         viewChart.alpha = 0.0
     }
     
-    func fadeIn(view: UIView, withDuration duration: TimeInterval = 2.0) {
+    func fadeIn(view: UIView, withDuration duration: TimeInterval = 1.0) {
         UIView.animate(withDuration: duration, animations: {
             view.alpha = 1.0
         })

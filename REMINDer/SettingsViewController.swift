@@ -10,7 +10,6 @@ import UIKit
 import DropDown
 
 struct Preference {
-    static let setGender = "setGender"
     static let setCharacter = "setCharacter"
     static let setFrequency = "setFrequency"
     static let setClock = "setClock"
@@ -41,8 +40,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (defaults.object(forKey: Preference.setGender) != nil) {
-            self.gender = defaults.bool(forKey: Preference.setGender)
+        if (defaults.object(forKey: Preference.setCharacter) != nil) {
             self.character = defaults.bool(forKey: Preference.setCharacter)
         }
         setCharacter()
@@ -55,7 +53,7 @@ class SettingsViewController: UIViewController {
             self.tvSnooze.text = defaults.string(forKey: Preference.setSnooze)
         }
         
-        self.freqDropDown.dataSource = ["Every week", "Every other week", "Every other month"]
+        self.freqDropDown.dataSource = ["Always", "Often", "Seldom"]
         self.freqDropDown.anchorView = tvFreq
         self.freqDropDown.bottomOffset = CGPoint(x: 0, y:(self.tvFreq.bounds.height))
         self.clockDropDown.dataSource = ["12-Hour", "24-Hour"]
@@ -71,18 +69,10 @@ class SettingsViewController: UIViewController {
     }
     
     func setCharacter(){
-        if gender {
-            if character {
-                tvCharacter.text = "Angel David"
-            } else {
-                tvCharacter.text = "Devil Luke"
-            }
+        if character {
+            tvCharacter.text = "Angel"
         } else {
-            if character {
-                tvCharacter.text = "Angel Lauren"
-            } else {
-                tvCharacter.text = "Devil Bella"
-            }
+            tvCharacter.text = "Devil"
         }
     }
     

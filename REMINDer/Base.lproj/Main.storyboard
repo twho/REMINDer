@@ -749,55 +749,36 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJB-pc-Wuo" customClass="CornerRadiusImageView" customModule="REMINDer" customModuleProvider="target">
-                                <rect key="frame" x="123" y="137" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-TA-w2U">
-                                <rect key="frame" x="74" y="289" width="67" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPK-n4-fbb">
-                                <rect key="frame" x="74" y="359" width="89" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WK3-yq-g4I">
-                                <rect key="frame" x="180" y="287" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Male"/>
-                                    <segment title="Female"/>
-                                </segments>
-                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segGenderChanged:" destination="jTS-gL-9Ke" eventType="valueChanged" id="67q-Bv-8fk"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g3S-Ik-Ncy">
-                                <rect key="frame" x="180" y="355" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Angel"/>
-                                    <segment title="Devil"/>
-                                </segments>
-                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segCharacterChanged:" destination="jTS-gL-9Ke" eventType="valueChanged" id="9vQ-xW-XU2"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uif-oK-dfB">
-                                <rect key="frame" x="74" y="335" width="227" height="1"/>
+                                <rect key="frame" x="16" y="296" width="343" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Angel Lauren" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hl-FL-bvT">
-                                <rect key="frame" x="16" y="95" width="343" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Angel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hl-FL-bvT">
+                                <rect key="frame" x="16" y="252" width="343" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK5-FE-WQF">
+                                <rect key="frame" x="112" y="94" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="angel_normal"/>
+                                <connections>
+                                    <action selector="ibAngelPressed:" destination="jTS-gL-9Ke" eventType="touchUpInside" id="iRY-oc-9IO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dT-71-HkA">
+                                <rect key="frame" x="112" y="328" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="devil_normal"/>
+                                <connections>
+                                    <action selector="ibDevilPressed:" destination="jTS-gL-9Ke" eventType="touchUpInside" id="S43-th-AhJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Devil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKP-hd-lI8">
+                                <rect key="frame" x="16" y="486" width="343" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -807,10 +788,10 @@
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ivCharacter" destination="rJB-pc-Wuo" id="6Td-ff-QyN"/>
-                        <outlet property="segCharacter" destination="g3S-Ik-Ncy" id="8Zw-RI-lc0"/>
-                        <outlet property="segGender" destination="WK3-yq-g4I" id="tUa-xo-bXM"/>
-                        <outlet property="tvCharacter" destination="2hl-FL-bvT" id="Nzc-Ta-gff"/>
+                        <outlet property="ibCharAngel" destination="dK5-FE-WQF" id="u0Z-Ii-H2w"/>
+                        <outlet property="ibCharDevil" destination="2dT-71-HkA" id="eb0-1P-blE"/>
+                        <outlet property="tvCharAngel" destination="2hl-FL-bvT" id="2u8-Sk-Mnw"/>
+                        <outlet property="tvCharDevil" destination="tKP-hd-lI8" id="VbG-MK-Wn9"/>
                         <segue destination="gnF-R9-lpP" kind="presentation" identifier="CharToSettingsIdentifier" id="J32-ys-2aL"/>
                     </connections>
                 </viewController>
@@ -820,6 +801,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="angel_normal" width="150" height="150"/>
+        <image name="devil_normal" width="150" height="150"/>
         <image name="ic_back" width="32" height="32"/>
         <image name="ic_chart" width="37" height="37"/>
         <image name="ic_listdown" width="36" height="36"/>
@@ -829,6 +812,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zhd-fG-mf9"/>
-        <segue reference="Ows-Ak-FZ5"/>
+        <segue reference="J32-ys-2aL"/>
     </inferredMetricsTieBreakers>
 </document>

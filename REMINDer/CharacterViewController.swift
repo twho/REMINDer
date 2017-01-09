@@ -9,101 +9,53 @@
 import UIKit
 
 class CharacterViewController: UIViewController {
-
-    @IBOutlet weak var ivCharacter: UIImageView!
-    @IBOutlet weak var tvCharacter: UILabel!
-    @IBOutlet weak var segGender: UISegmentedControl!
-    @IBOutlet weak var segCharacter: UISegmentedControl!
     
-    var gender: Bool = true
     var character: Bool = true
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var ibCharAngel: UIButton!
+    @IBOutlet weak var ibCharDevil: UIButton!
+    @IBOutlet weak var tvCharAngel: UILabel!
+    @IBOutlet weak var tvCharDevil: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (defaults.object(forKey: Preference.setGender) != nil) {
-            self.gender = defaults.bool(forKey: Preference.setGender)
-            setSegControl(segment: self.gender, segControl: self.segGender)
-            self.character = defaults.bool(forKey: Preference.setCharacter)
-            setSegControl(segment: self.character, segControl: self.segCharacter)
+        if (defaults.object(forKey: Preference.setCharacter) != nil) {
+            character = defaults.bool(forKey: Preference.setCharacter)
         }
         updateCharacter()
-    }
-    
-    func setSegControl(segment: Bool, segControl: UISegmentedControl){
-        if segment {
-            segControl.selectedSegmentIndex = 0
-        } else {
-            segControl.selectedSegmentIndex = 1
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func segGenderChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-            case 0:
-                self.gender = true
-                break
-            case 1:
-                self.gender = false
-                break
-            default:
-                break
-        }
-        updateCharacter()
-    }
-    
-    @IBAction func segCharacterChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-            case 0:
-                self.character = true
-                break
-            case 1:
-                self.character = false
-                break
-            default:
-                break
-        }
-        updateCharacter()
-    }
-    
     @IBAction func btnBackPressed(_ sender: UIBarButtonItem) {
-        self.defaults.setValue(self.gender, forKey: Preference.setGender)
         self.defaults.setValue(self.character, forKey: Preference.setCharacter)
         self.performSegue(withIdentifier: "CharToSettingsIdentifier", sender: self)
     }
     
-    func updateCharacter(){
-        ivCharacter.alpha = 0
-        tvCharacter.alpha = 0
-        if gender {
-            if character {
-                tvCharacter.text = "Angel David"
-                ivCharacter.image = UIImage(named: "sample_angel")
-            } else {
-                tvCharacter.text = "Devil Luke"
-                ivCharacter.image = UIImage(named: "sample_devil")
-            }
-        } else {
-            if character {
-                tvCharacter.text = "Angel Lauren"
-                ivCharacter.image = UIImage(named: "sample_angel")
-            } else {
-                tvCharacter.text = "Devil Bella"
-                ivCharacter.image = UIImage(named: "sample_devil")
-            }
-        }
-        fadeIn(imageView: ivCharacter, textView: tvCharacter)
+    @IBAction func ibAngelPressed(_ sender: UIButton) {
+        self.character = true
+        updateCharacter()
     }
     
-    func fadeIn(imageView: UIImageView, textView: UILabel, withDuration duration: TimeInterval = 2.0) {
-        UIView.animate(withDuration: duration, animations: {
-            imageView.alpha = 1.0
-            textView.alpha = 1.0
-        })
+    @IBAction func ibDevilPressed(_ sender: UIButton) {
+        self.character = false
+        updateCharacter()
+    }
+    
+    func updateCharacter(){
+        if character {
+            ibCharDevil.setImage(UIImage(named: "devil_normal"), for: .normal)
+            ibCharAngel.setImage(UIImage(named: "angel_selected"), for: .normal)
+            tvCharDevil.textColor = UIColor.white
+            tvCharAngel.textColor = UIColor(red:0.00, green:1.00, blue:1.00, alpha:1.0)
+        } else {
+            ibCharDevil.setImage(UIImage(named: "devil_selected"), for: .normal)
+            ibCharAngel.setImage(UIImage(named: "angel_normal"), for: .normal)
+            tvCharAngel.textColor = UIColor.white
+            tvCharDevil.textColor = UIColor(red:0.00, green:1.00, blue:1.00, alpha:1.0)
+        }
     }
 }
