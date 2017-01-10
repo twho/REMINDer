@@ -5,7 +5,7 @@ int cx, cy;
 float clockDiameter;
 
 // Timer time unit: minute
-float setTimerTime = (1) * 60.0 * 60.0 * 60;
+float setTimerTime = (20) * 60.0 * 60.0 * 60;
 float currentTimerTime = 0.0;
 
 //Buttons
@@ -28,9 +28,10 @@ Boolean overPause = false;
 Boolean overExtend = false;
 Boolean overOkay = false;
 Boolean timerRunning = true;
+Boolean ifInMode3 = false;
 
 // 0 = standard mode, 1 = timer mode, 2 = receive message
-// keyboard control S = 0, T = 1, M = 2
+// keyboard control S = 0, T = 1, M = 2, N = 3, N2 = 4
 int mode = 0;
 
 
@@ -68,6 +69,12 @@ void draw() {
       break;
     case 2:
       receiveMessage(30);
+      break;
+    case 3:
+      drawNextEvent(60, mode);
+      break;
+    case 4:
+      drawNextEvent(60, mode);
       break;
   }
   if(timerRunning){
@@ -130,9 +137,9 @@ void drawTimerOnly(int _fontSize, float _x, float _y) {
   fill(255, 255, 255);
   textFont(font, _fontSize);
   if(currentTimerTime > 0) {
-    int timerHour = int(currentTimerTime/(3600*60));
-    int timerMin = int(currentTimerTime/3600 - timerHour * 60);
-    int timerSec = int(currentTimerTime/60 - timerMin * 60);
+    int timerHour = int(currentTimerTime/(3600* 60* 60));
+    int timerMin = int(currentTimerTime/(3600* 60) - timerHour * 60 *60);
+    int timerSec = int(currentTimerTime/(60* 60) - timerMin *60);
     text(formatTimeText(timerHour) + ":" + formatTimeText(timerMin) + ":" + formatTimeText(timerSec), _x, _y);
     textFont(font, _fontSize / 2.2);
     fill(195, 195, 54);
@@ -190,6 +197,47 @@ void receiveMessage(int _fontSize) {
   textFont(font, _fontSize / 1.5);
   fill(255, 255, 255);
   text("Hey Alice! Don't forget to \n hand in your report at 9AM \n on Monday!", cx, cy + 16);
+}
+
+void drawNextEvent(int _fontSize, int mode){
+  stroke(52);
+  ellipse(cx, cy, clockDiameter + 2, clockDiameter + 2);
+  strokeWeight(10);
+  if (currentTimerTime * ( 2 * PI / setTimerTime) < PI / 2.0) {
+    stroke(234, 102, 53);
+  } else {
+    stroke(53, 218, 234);
+  }
+  
+  // Draw the timer ellipse
+  arc(cx, cy, clockDiameter, clockDiameter, -PI / 2.0, -PI / 2.0 + currentTimerTime * ( 2 * PI / setTimerTime));
+  
+  textFont(font, _fontSize / 1.5);
+  fill(53, 218, 234);
+  text("UP NEXT", cx, cy - _fontSize * 1.5);
+  //draw line
+  strokeWeight(2);
+  line(cx - 100, cy - _fontSize * 1.5 + 15, cx + 100, cy - _fontSize * 1.5 + 15);
+
+  switch(mode) {
+    case 3:
+      setNextViewContent("10:00 AM - 12:00 PM", "Duderstadt Library", "Final Report", _fontSize);
+      break;
+    case 4:
+      setNextViewContent("1:00 PM - 2:00 PM", "Train Station", "Train", _fontSize);
+      break;
+  } 
+}
+
+void setNextViewContent(String timeSlot, String location, String event, int _fontSize){
+  fill(255, 255, 255);
+  textFont(font, _fontSize / 2);
+  text(timeSlot, cx, cy - _fontSize / 2);
+  textFont(font, _fontSize / 3);
+  text(location, cx, cy + _fontSize * 1.5);
+  fill(195, 195, 54);
+  textFont(font, _fontSize / 1.5);
+  text(event, cx, cy + _fontSize / 1.6);
 }
 
 void mousePressed() {
@@ -263,6 +311,14 @@ void keyPressed() {
     mode = 1;
   } else if (key == 'm' || key == 'M') {
     mode = 2;
+  } else if (key == 'n' || key == 'N') {
+    if (!ifInMode3){
+      mode = 3;
+      ifInMode3 = true;
+    } else {
+      mode = 4;
+      ifInMode3 = false;
+    }
   }
 }
 
