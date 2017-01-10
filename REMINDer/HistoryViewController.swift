@@ -12,6 +12,7 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var viewChart: UIView!
     @IBOutlet weak var viewDay: UIView!
+    @IBOutlet weak var ivDashedLine: UIImageView!
     @IBOutlet weak var ivChart: UIImageView!
     @IBOutlet weak var tvTaskPercentage: UILabel!
     @IBOutlet weak var tvTask: UILabel!
@@ -26,6 +27,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.ivDashedLine.image = (UIImage(named: "img_dashed_line")?.maskWithColor(color: UIColor.white)!)! as UIImage
         setDayView()
     }
 

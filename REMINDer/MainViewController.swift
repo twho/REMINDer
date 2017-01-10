@@ -25,7 +25,7 @@ class MainViewController: NMessengerViewController, PNObjectEventListener {
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var mainChannelName: String = "REMINDerChat2"
+    var mainChannelName: String = "REMINDerChat3"
     var allMessageItems: [MessageItem] = []
     let myName = "Janet"
     let serialQueue: DispatchQueue = DispatchQueue(label: "pageHistoryQueue", attributes: [])

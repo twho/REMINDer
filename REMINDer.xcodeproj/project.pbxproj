@@ -19,6 +19,7 @@
 		27A60D8C1E1F62A2006A5BEC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */; };
 		27A60D8E1E1F6941006A5BEC /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */; };
 		27A60D901E1F69BC006A5BEC /* UIColorByHexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */; };
+		27CCCB381E25A569002017EC /* imageColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CCCB371E25A569002017EC /* imageColorFilter.swift */; };
 		27FA01BF1E20B83500458B51 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA01BE1E20B83500458B51 /* CharacterViewController.swift */; };
 		4E7049C42537FDFC5CAC4307 /* Pods_REMINDerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C77C67F08DD337FE5F54CF /* Pods_REMINDerUITests.framework */; };
 		5B14EFC94136F8310BCD17C4 /* Pods_REMINDerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E72E444A9C181F09C99B82 /* Pods_REMINDerTests.framework */; };
@@ -59,6 +60,7 @@
 		27A60D8B1E1F62A2006A5BEC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorByHexRGB.swift; sourceTree = "<group>"; };
+		27CCCB371E25A569002017EC /* imageColorFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageColorFilter.swift; sourceTree = "<group>"; };
 		27FA01BE1E20B83500458B51 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		32CF5CA02F790105CC3C9053 /* Pods-REMINDerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REMINDerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-REMINDerUITests/Pods-REMINDerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		39E72E444A9C181F09C99B82 /* Pods_REMINDerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_REMINDerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				27918EDC1E1E877B004CF82C /* HideKeyboardByTapViewController.swift */,
 				27A60D8D1E1F6941006A5BEC /* CornerRadiusView.swift */,
 				27A60D8F1E1F69BC006A5BEC /* UIColorByHexRGB.swift */,
+				27CCCB371E25A569002017EC /* imageColorFilter.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				275277CD1E21C26E005014BE /* HistoryViewController.swift in Sources */,
 				27A60D8E1E1F6941006A5BEC /* CornerRadiusView.swift in Sources */,
 				27A60D8C1E1F62A2006A5BEC /* SettingsViewController.swift in Sources */,
+				27CCCB381E25A569002017EC /* imageColorFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
